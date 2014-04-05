@@ -2,14 +2,11 @@ function track()
 {
     this.trackpoints = new Array();
 }
-<<<<<<< HEAD
 
-=======
 // Trackpoint LAT & LONG in DEGREES
 t1 = {lat:51.1329624, lon:4.391393, timestamp: 0}
 t2 = {lat:51.1337225, lon:4.3896425, timestamp: 5}
 t3 = {lat:3, lon:3, timestamp: 6}
->>>>>>> a2afded66094991fac2c7b5cd5e05710aae00052
 
 
 function addTP(track_obj,trackpoint)
