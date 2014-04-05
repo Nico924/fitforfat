@@ -2,7 +2,6 @@ function track()
 {
     this.trackpoints = new Array();
 }
-
 // Trackpoint LAT & LONG in DEGREES
 t1 = {lat:51.1329624, lon:4.391393, timestamp: 0}
 t2 = {lat:51.1337225, lon:4.3896425, timestamp: 5}
