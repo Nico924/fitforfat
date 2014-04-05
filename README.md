@@ -1,4 +1,0 @@
-fitforfat
-=========
-
-Startup Weekend Leuven
