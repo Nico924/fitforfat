@@ -3,7 +3,7 @@ controllers.controller('HeaderController', ['$scope','$http', function($scope,$h
     Constructor
     */
     $scope.init=function(){
-        //...
+        //
         console.log("header");
     }
     $scope.init();

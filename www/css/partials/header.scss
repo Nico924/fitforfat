@@ -1,0 +1,52 @@
+header{
+    width:100%;
+    .presentation{
+        padding-top:12px;
+        position: relative;
+        padding-bottom: 20px;
+        border-bottom: 3px solid $greyBorder;
+        .title{
+            text-align: center;
+            font-size:25px;
+            text-transform: uppercase;
+        }
+        .sub-title{
+            text-align: center;
+            font-size:10px;
+            color:$orange;
+        }
+        .logo{
+            position: absolute;
+            left:20px;
+        }
+    }
+    .menu{
+        .element{
+            font-size:14px;
+            margin: 0px;
+            text-transform: uppercase;
+            width:33.3%;
+            padding-top:50px;
+            padding-bottom: 20px;
+            float:left;
+            color:white;
+            position: relative;
+            .txt{
+                position: absolute;
+                bottom:20px;
+                text-align: center;
+                width: 100%;
+                
+            }
+            .img{
+                width:50%;
+                margin: auto;
+                margin-bottom: 15px;
+            }
+        }
+        .element.selected{
+            background-color: white;
+            color:black;
+        }
+    }
+}

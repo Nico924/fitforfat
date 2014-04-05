@@ -1,2 +1,12 @@
-<h1>WELCOME</h1>
-<div id="location"></div>
+<div class="tracking">
+    {{app.running}}
+    <div ng-if="!running">
+        <div class="title">
+            Are you ready to run ?
+        </div>
+        <div class="sub-title">
+            Which kind of track ?
+        </div>
+        
+    </div>
+</div>

@@ -1,11 +1,12 @@
 //Bootstrap
-@import "vendor/bootstrap-theme";
-@import "vendor/bootstrap";
+//@import "vendor/bootstrap-theme";
+//@import "vendor/bootstrap";
 // Modules
 @import "modules/colors";
 @import "modules/all";
 // Partials
-
+@import "partials/header";
+@import "partials/tracking";
 //icon part (so it has a highest priority)
 @import "modules/icon";
 
