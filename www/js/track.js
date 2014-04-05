@@ -3,10 +3,6 @@ function track()
     this.trackpoints = new Array();
 }
 
-// Trackpoint LAT & LONG in DEGREES
-t1 = {lat:51.1329624, lon:4.391393, timestamp: 0}
-t2 = {lat:51.1337225, lon:4.3896425, timestamp: 5}
-t3 = {lat:3, lon:3, timestamp: 6}
 
 
 function addTP(track_obj,trackpoint)
@@ -61,21 +57,25 @@ function maxvelocity(track_obj){
 }
 
 
+// Return an array of velocities over time
 function velocities(track_obj){
-    maxvel = 0;
+    var list = new Array()
     for(i=1;i<track_obj.trackpoints.length;i++){
         tp1 = track_obj.trackpoints[i-1];
         tp2 = track_obj.trackpoints[i];
-        vel = velocity(tp1,tp2)
-        if (vel > maxvel){
-            maxvel = vel
-        }
+        list.push(velocity(tp1,tp2))
     }
 
-    return maxvel;
+    return list;
 }
 
+function totaltime_seconds(track_obj){
+    return  track_obj.trackpoints.map(getTime).reduce(function(a, b) { return a + b });
+}
 
+function getTime(trackpoint){
+    return  trackpoint.timestamp;
+}
 
 function totaldistance_meters(track_obj){
     dist = 0;
@@ -85,6 +85,10 @@ function totaldistance_meters(track_obj){
         dist += distance_meters(tp1,tp2)
     }
     return dist;
+}
+
+function avgvelocity(track_obj){
+    return velocities(track_obj).reduce(function(a, b) { return a + b })/totaltime_seconds(track_obj);
 }
 
 

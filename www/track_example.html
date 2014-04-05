@@ -7,10 +7,7 @@
 <p id="demo">This is a paragraph</p>
 
 
-
-
 <script>
-
 
 test = new track()
 var t1 = {lat: 40.78406772015, lon: -73.95647406578064, timestamp: 0}
@@ -26,6 +23,8 @@ addTP(test,t5)
 
 alert("Total Distance:"+totaldistance_meters(test) +" meters")
 alert("Max Speed:"+ maxvelocity(test) + "mps")
+alert("Total Time:"+ totaltime_seconds(test))
+alert("Avg velocity:"+ avgvelocity(test))
 
 </script>
 
