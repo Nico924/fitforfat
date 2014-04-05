@@ -6341,10 +6341,14 @@ body {
   -webkit-text-size-adjust: none;
   /* prevent webkit from resizing text to fit */
   -webkit-user-select: none;
-  background: gainsboro; }
+  background: gainsboro;
+  text-align: center; }
 
 h1 {
   text-align: center; }
+
+p {
+  text-color: bold; }
 
 /* required styles */
 .leaflet-map-pane,

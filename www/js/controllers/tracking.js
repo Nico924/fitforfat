@@ -9,15 +9,17 @@ controllers.controller('TrackingController', ['$scope','$http', function($scope,
         //   the current GPS coordinates
         //
         function onSuccess(position) {
+            var location=$("#location");
             var message = 'Latitude: '  + position.coords.latitude      + ' ' +'Longitude: ' +position.coords.longitude;
-            helper.showAlert(message,"");
+            location.html(message);
+            //helper.showAlert(message,"");
             
         }
 
         // onError Callback receives a PositionError object
         //
         function onError(error) {
-            alert('code: '    + error.code    + '\n' +
+            helper.showAlert('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
         }
 
