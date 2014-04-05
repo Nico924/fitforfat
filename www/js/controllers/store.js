@@ -8,4 +8,4 @@ controllers.controller('StoreController', ['$scope','$http', function($scope,$ht
 
     }
     $scope.init();
-};
+}]);

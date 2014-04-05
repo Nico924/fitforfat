@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="Fitforfat">
+<html lang="en" ng-app="app">
 <head>
 	<title>Fit for Fat</title>
 	 <!--[if lte IE 9]>
@@ -17,20 +17,22 @@
           document.createElement('ng:view');
     </script>
     <![endif]-->
-	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="css/main.css" rel="stylesheet" type="text/css">
 
 	<script type="text/javascript" src="lib/jquery/jquery-1.9.1.js"></script>
 	<script type="text/javascript" src="lib/angular/angular.js"></script>    
     <script type="text/javascript" src="lib/angular/angular-sanitize.js"></script>
-    <script type="text/javascript" src="lib/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-route.js"></script>
 
     <script src="js/config.js"></script>
+    <script src="js/helper.js"></script>
     <script src="js/functions.js"></script>
+    
     <script src="js/factories.js"></script>
 	<script src="js/directives.js"></script>
     <!-- Controllers -->
     <script src="js/controllers/controllers.js"></script>
+    <script src="js/controllers/header.js"></script>
     <script src="js/controllers/post.js"></script>
 	<script src="js/controllers/store.js"></script>
 	<script src="js/controllers/tracking.js"></script>
@@ -44,7 +46,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <header ng-include="'partials/header.html'" ng-controller="HeaderController"></header>
+    <footer ng-include="'partials/header.html'"  ng-controller="HeaderController"></footer>
 	<div ng-view></div>
     <footer ng-include="'partials/footer.html'"></footer>
 </body>

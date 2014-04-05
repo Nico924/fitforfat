@@ -7,4 +7,4 @@ controllers.controller('PostController', ['$scope','$http', function($scope,$htt
         console.log("store");
     }
     $scope.init();
-};
+}]);

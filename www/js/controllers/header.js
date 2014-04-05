@@ -7,4 +7,4 @@ controllers.controller('HeaderController', ['$scope','$http', function($scope,$h
         console.log("header");
     }
     $scope.init();
-};
+}]);
