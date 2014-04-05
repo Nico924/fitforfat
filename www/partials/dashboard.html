@@ -1,0 +1,83 @@
+<div ng-controller="DashboardCtrl">
+	<my-menu left-icon="menu-icon" 		right-icon="update-icon" 
+			 left-action="extendMenu()"	right-action="tenders();" >
+	</my-menu>
+	
+	<ul class="tab-bar-2 hitstate" ng-show="isCurrentWeek">
+		<li class="selected-Dark"> This Week </li>
+		<li> <a ng-click="changeURL('#/dashboard?timestamp=' + LastWeekTimestamp)">Last Week</a> </li>
+	</ul>
+
+	<ul class="tab-bar-2 hitstate" ng-hide="isCurrentWeek">
+		<li> <a ng-click="changeURL('#/dashboard')">This Week</a> </li>
+		<li class="selected-Dark">Last Week</li>
+	</ul>
+
+	<div class="data-box">
+		<div class="container-Dark container-huge">
+			<div class="header-icon-dropLoads"></div>
+			<div class="header-title bottomSpace-huge">Drop Loads</div>
+
+			<info-arrow-table class="bottomSpace-big"
+					color="blue"					  unite="%"
+					th1="LOADS" 					  th2="OTP"
+					td1="{{ DASH.drop_loads.loads }}" td2="{{ DASH.drop_loads.otp }}">
+			</info-arrow-table>
+
+			<info-arrow-table class="bottomSpace-big"
+					color="blue"					  unite="M"
+					th1="MILES" 					  th2="AVG HAUL" 
+					td1="{{ DASH.drop_loads.miles }}" td2="{{ DASH.drop_loads.avg_haul }}">
+			</info-arrow-table>
+		</div>
+		<div class="container-Light container-huge">
+			<div class="header-icon-liveLoads"></div>
+			<div class="header-title bottomSpace-huge">Live Loads</div>
+
+			<info-arrow-table class="bottomSpace-big"
+					color="purpel"					  unite="%"
+					th1="LOADS" 					  th2="OTP" 
+					td1="{{ DASH.live_loads.loads }}" td2="{{ DASH.live_loads.otp }}">
+			</info-arrow-table>
+
+			<info-arrow-table class="bottomSpace-big"
+					color="purpel"					  unite="M"
+					th1="MILES" 					  th2="AVG HAUL"
+					td1="{{ DASH.live_loads.miles }}" td2="{{ DASH.live_loads.avg_haul }}">
+			</info-arrow-table>
+		</div>
+
+		<div class="container-Dark container-huge">
+			<div class="header-icon-acceptanceRates"></div>
+			<div class="header-title bottomSpace-huge">Acceptance Rates</div>
+
+
+			<info-arrow-table class="bottomSpace-big"
+					color="blue"					  unite="%"
+					th1="DROP DISPATCH" 			  th2="ACCEPTED" 
+					td1="{{ DASH.drop_loads.dispatch }}" td2="{{ DASH.drop_loads.accepted }}">
+			</info-arrow-table>
+
+			<info-arrow-table class="bottomSpace-big"
+					color="purpel" 						 unite="%"
+					th1="LIVE DISPATCH" 			 	 th2="ACCEPTED" 
+					td1="{{ DASH.live_loads.dispatch }}" td2="{{ DASH.live_loads.accepted }}">
+			</info-arrow-table>
+		</div>
+
+		<div class="container-Light container-huge container-logo">
+			<div class="header-icon-fuel" id="fuel"></div>
+			<div class="header-title bottomSpace-huge">Fuel</div>
+			
+			<info-table class="bottomSpace-huge"
+						th1="GALLONS"					th2="TOTAL"					th3="SAVED"
+						td1="{{ DASH.fuel.gallons }}"	td2="&#36;{{ DASH.fuel.total_cost }}"	td3="&#36;{{ DASH.fuel.saved }}">
+			</info-table>
+
+			<a ng-hide="DASH.fuel.gallons == 0 || DASH.fuel == ''" ng-click="seeDetail()" class="hitstate">
+				<div class="simple-text-button">SEE FUEL DETAIL ></div>
+			</a>
+		</div>
+	</div>
+</div>
+

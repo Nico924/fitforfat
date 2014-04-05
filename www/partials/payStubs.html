@@ -1,0 +1,38 @@
+<div ng-controller="PayStubsCtrl">
+	<my-menu left-icon="menu-icon" 			right-icon="update-icon" 
+			 left-action="extendMenu();"	right-action="tenders();">
+	</my-menu>
+
+	<div class="data-box">
+		<div class="container-Light container-huge">
+			<div class="header-icon-payStubs"></div>
+			<div class="header-title bottomSpace-huge">Pay Stubs</div>
+			<div class="bottomSpace-huge" > {{ PAY.banner_text }} </div>
+
+
+			<div ng-repeat="payStub in PAY.pay_stub" class="bottomSpace-huge">
+				<table class="arrow-table bottomSpace-big">
+					<caption>WEEK ENDING - {{ payStub.week_ending | getMMDDYYYYStr }}</caption>
+					<tbody>
+						<tr>
+							<th class="center"> 
+								TRACTOR NBR
+								<div class="arrow-icon"></div> 
+							</th>
+							<td class="center">{{ payStub.tractor_number }}</td>
+						</tr>
+					</tbody>
+				</table>
+				
+				<div ng-repeat="file in payStub.file">				
+					<div class="info-field-blue bottomSpace-normal hitstate" ng-click="openPDF(file.url)">
+						<div class="arrow-icon-next"></div> 
+						VIEW {{ file.UIView }}
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,70 @@
+<div ng-controller="TendersHistoryCtrl">
+	<my-menu left-icon="menu-icon" right-icon="update-icon" left-action="extendMenu()"	right-action="tenders();" right-class="selected"></my-menu>
+	
+    <ul class="tab-bar-3 condensedFont">
+		<li class="hitstate"><a onclick="changeURL('#/tenders');">Pre-Plan</a></li>
+		<li class="hitstate"><a onclick="changeURL('#/tendersTrip');">Trip Plan</a></li>
+       <li class="selected-Dark hitstate">History</li>
+	</ul>
+    
+    <div ng-show="isItAllDriverView" class="container-Dark selecteDriverMessage">
+		Please select an individual<br/>driver to see this section.
+	</div>
+
+	<div ng-hide="isItAllDriverView" class="data-box" when-scrolled="loadContent()">
+
+		{{ TENDERSHISTORY.trip.lenght }}
+
+		<div class="container-Dark container-big" id="{{ trip.id }}" ng-repeat="trip in TENDERSHISTORY.trip">
+			<div class="info-title-blue bottomSpace-normal"> ORDER {{trip.id}} - {{trip.loaded_miles}} MI </div>
+
+			<div ng-repeat="stop in trip.stop">
+
+	        	<div class="bottomSpace-huge">
+
+					<div class="info-text-black bottomSpace-sticky"> {{ stop.label }}</div>
+
+					<a onclick="window.open('{{stop.adressLink}}', '_system','location=yes');">
+						<div class="info-field-blue multiple-line-text bottomSpace-sticky hitstate"> 
+							<div class="arrow-icon-next"></div>
+							{{ stop.name }}<br/>
+						    {{ stop.address.number + " " + stop.address.street + " " + stop.address.extra }} <br/>
+                            {{ stop.address.city + ", " + stop.address.state+ " " + stop.address.zipcode }}<br/>
+						</div>
+					</a>
+
+					<table class="arrow-table bottomSpace-sticky">
+						<tbody>
+							<tr>
+								<th class="center">{{ stop.appointment.start | getDateStr }} {{ stop.appointment.start | getHourStr }}<div class="arrow-icon"></div> </th>
+								<td class="center">{{ stop.appointment.end | getDateStr }} {{ stop.appointment.end | getHourStr }}</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="bottomSpace-sticky"><div class="triangle-icon"></div></div>
+					
+					<div class="info-text-black bottomSpace-sticky"> ACTUAL TIME</div>
+					<table class="arrow-table">
+						<tr>
+							<th class="center">
+								{{ stop.act_arrival | getDateStr }} {{ stop.act_arrival | getHourStr }}
+								<div class="arrow-icon"></div> 
+							</th>
+							<td class="center">
+                                {{ stop.act_depart | getDateStr }} {{ stop.act_depart | getHourStr }}
+                            </td>
+						</tr>
+					</table>
+
+				</div>
+						
+	    	</div>
+            <a ng-click="seeTrip(trip.id);">
+				<div class="simple-text-button bottomSpace-huge hitstate">SEE TRIP DETAIL ></div>
+			</a>
+	    </div>
+	    <div class="container-Dark noData-box" >
+	    	{{ noMoreMessage }}
+	    </div>
+	</div>
+</div>

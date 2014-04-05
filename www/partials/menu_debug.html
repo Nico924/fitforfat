@@ -1,0 +1,30 @@
+<div class="menu-bar" ng-controller="UserInfoCtrl">
+	<div class="{{ leftClass }}" onclick="{{ leftAction }}">
+    	<div class="{{ leftIcon }}" ></div>
+	</div>
+		<span ng-hide="title" class="condensedFont"> A Bedoret  </span>
+	<div class="{{ rightClass }}" onclick="{{ rightAction }}">
+    	<div class="{{ rightIcon }}" ></div>
+	</div>
+</div>
+
+<div ng-controller="MenuCtrl" id="extendMenu" style="">
+	<a  ng-repeat="link in MENU.values" ng-click="menuLink(link.key)">
+		<div ng-class="{true: 'selected', false: ''}[link.isSelected]">
+			<div ng-class="link.key + '-icon'" ></div>
+			{{ link.display }}
+		</div>
+	</a>
+    <a  ng-repeat="link in MENU.values" ng-click="menuLink(link.key)">
+		<div ng-class="{true: 'selected', false: ''}[link.isSelected]">
+			<div ng-class="link.key + '-icon'" ></div>
+			{{ link.display }}
+		</div>
+	</a>
+    <a  ng-repeat="link in MENU.values" ng-click="menuLink(link.key)">
+		<div ng-class="{true: 'selected', false: ''}[link.isSelected]">
+			<div ng-class="link.key + '-icon'" ></div>
+			{{ link.display }}
+		</div>
+	</a>
+</div>

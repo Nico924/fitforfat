@@ -1,0 +1,20 @@
+<div ng-controller="RejectReasonCtrl">
+	<my-menu left-icon="" 	right-icon="" 
+			 left-action=""	right-action="">
+	</my-menu>
+	
+	<div class="container-Light ">
+
+		<a ng-repeat="reason in REASONS.values" ng-click="rejectConfirmation(reason.key,reason.display);" class="hitstate">
+			<div class="info-field-blue bottomSpace-sticky">
+				<div class="arrow-icon-next"></div> 
+				{{ reason.display }}
+			</div>
+		</a>
+
+		<div class="info-title-red hitstate">
+			<a onclick="changeURL('#/tenders')">CANCEL</a>
+		</div>
+
+	</div>
+</div>

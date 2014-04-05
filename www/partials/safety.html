@@ -1,0 +1,76 @@
+<div ng-controller="SafetyCtrl">
+	<my-menu left-icon="menu-icon" 			right-icon="update-icon"
+		left-action="extendMenu();"	right-action="tenders();">
+	</my-menu>
+
+    <div class="container-Light container-huge">
+		<div class="header-icon-safety"></div>
+		<div class="header-title bottomSpace-huge">Safety</div>
+
+		<div ng-show="isItAllDriverView" class="selecteDriverMessage">
+			Please select an individual<br/>driver to see this section.
+		</div>
+	
+		<div ng-hide="isItAllDriverView">
+
+			<table class="arrow-table big-title bottomSpace-big">
+				<tbody>
+					<tr>
+						<th> Dot Inspection <div class="arrow-icon"></div> </th>
+						<td>{{ SAFETY.safety.dot_inspection | getMMDDYYYYStr}}</td>
+					</tr>
+					<tr>
+						<th> Monthly Maint. <div class="arrow-icon"></div> </th>
+						<td>{{ SAFETY.safety.monthly_maintenance | getMMDDYYYYStr }}</td>
+					</tr>
+					<tr>
+						<th> States Apport. <div class="arrow-icon"></div> </th>
+						<td>{{ SAFETY.safety.states_apportioned }}</td>
+					</tr>
+				</tbody>
+			</table>
+			<a ng-show="isEditable" ng-href="mailto:{{SAFETY.safety.contact.email}}?subject={{mail_subject}}&body={{mail_body}}">
+				<div class="info-field-blue bottomSpace-big hitstate">
+					<div class="arrow-icon-next"></div> 
+					CONTACT SAFETY REP.
+				</div>
+			</a>
+
+		</div>
+		
+	</div>
+    
+    <div class="container-Dark container-huge">
+		<div class="header-icon-training"></div>
+		<div class="header-title bottomSpace-huge">Training</div>
+
+		<div ng-show="isItAllDriverView" class="selecteDriverMessage">
+			Please select an individual<br/>driver to see this section.
+		</div>
+	
+		<div ng-hide="isItAllDriverView" class="data-box">
+			
+			<a ng-show="isEditable" ng-click="accessTrainingLink(SAFETY.training.url);">
+				<div class="info-field-blue bottomSpace-sticky hitstate">
+					<div class="arrow-icon-next"></div> 
+					ACCESS TRAINING
+                    <div class="sub-blue">USE QC LOGIN</div>
+				</div>
+			</a>
+			
+			<a ng-show="isEditable" ng-href="mailto:{{SAFETY.training.contact.email}}">
+				<div class="info-field-blue bottomSpace-huge hitstate">
+					<div class="arrow-icon-next"></div> 
+					CONTACT TRAINING REP.
+				</div>
+			</a>
+            
+            <div ng-hide="isEditable" class="selecteDriverMessage">
+                Fleet Owners cannot currently access Training information for their drivers
+            </div>
+            
+		</div>
+		
+	</div>
+
+</div>

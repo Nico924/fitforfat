@@ -1,0 +1,100 @@
+<div ng-controller="ProfileCtrl">
+	<my-menu left-icon="menu-icon" right-icon="update-icon" left-action="extendMenu()"	right-action="tenders();"></my-menu>
+	
+	<div ng-show="isItAllDriverView" class="container-Dark selecteDriverMessage">
+		Please select an individual<br>driver to see this section.
+	</div>
+	
+	<div ng-hide="isItAllDriverView">
+		<div class="container-Light">
+			<a ng-href="tel:{{PROFILE.cellphone}}" class="hitstate">
+				<div class="info-field-blue bottomSpace-normal"> {{ PROFILE.cellphone }} </div>
+			</a>
+			
+			<a ng-href="mailto:{{PROFILE.email}}" class="hitstate">
+				<div class="info-field-blue uppercase bottomSpace-big"> {{ PROFILE.email }} </div>
+			</a>
+			
+			<a onclick="window.open('{{PROFILE.adressLink}}', '_system','location=yes');" class="hitstate">
+	 			<div class="adress-field multiple-line-text bottomSpace-huge">
+					{{ PROFILE.address.number + " " + PROFILE.address.street }} <br>
+					{{ PROFILE.address.extra }} <br>
+					{{ PROFILE.address.city + " " + PROFILE.address.state + PROFILE.address.zipcode }}
+				</div>
+			</a>
+
+			<a onclick="changeURL('#/profileContactDetail');" class="hitstate">
+				<div class="simple-text-button bottomSpace-big">VIEW FULL PROFILE ></div>
+			</a>
+		</div>
+		
+		<div class="container-Dark container-huge">
+			<div class="header-icon-licensing"></div>
+			<div class="header-title bottomSpace-huge">Licensing</div>
+
+				<info-table class="bottomSpace-big"
+							th1="LICENSE#"						th2="TYPE"							th3="STATE"
+							td1="{{ PROFILE.license.number }}"	td2="{{ PROFILE.license.type }}"	td3="{{ PROFILE.license.state }}">
+				</info-table>
+		</div>
+		
+		<div class="container-Light container-huge">
+			<div class="header-icon-dates"></div>
+			<div class="header-title bottomSpace-huge">Important Dates</div>
+
+			<table class="arrow-table bottomSpace-big">
+				<tbody>
+					<tr ng-repeat="(name, date) in PROFILE.date">
+						<th> 
+							{{ name.split("_").join(" ") }}
+							<div class="arrow-icon"></div> 
+						</th>
+						<td class="center">{{ date }}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="container-Dark container-huge container-logo">
+			<div class="header-icon-certifications"></div>
+			<div class="header-title bottomSpace-huge">Certifications</div>
+
+			<table class="checkBox-table bottomSpace-big">				
+				<tbody>
+					
+					<tr>
+						<th>DOUBLES/TRIPLES</th>
+						<td><div class="check-icon" ng-show="PROFILE.certificate.doubles_triples"></div></td>
+						<td><div class="cross-icon" ng-hide="PROFILE.certificate.doubles_triples"></div></td>
+					</tr>
+                    <tr>
+						<th>HAZMAT</th>
+						<td><div class="check-icon" ng-show="PROFILE.certificate.hazmat"></div></td>
+						<td><div class="cross-icon" ng-hide="PROFILE.certificate.hazmat"></div></td>
+					</tr>
+					<tr>
+						<th>OFF YARD PARK</th>
+						<td><div class="check-icon" ng-show="PROFILE.certificate.off_yard_park"></div></td>
+						<td><div class="cross-icon" ng-hide="PROFILE.certificate.off_yard_park"></div></td>
+					</tr>
+					<tr>
+						<th>PASSENGER BUS</th>
+						<td><div class="check-icon" ng-show="PROFILE.certificate.passenger_bus"></div></td>
+						<td><div class="cross-icon" ng-hide="PROFILE.certificate.passenger_bus"></div></td>
+					</tr>
+                    <tr>
+						<th>PASSENGER OK</th>
+						<td><div class="check-icon" ng-show="PROFILE.certificate.passenger_ok"></div></td>
+						<td><div class="cross-icon" ng-hide="PROFILE.certificate.passenger_ok"></div></td>
+					</tr>
+					<tr>
+						<th>TANKERS</th>
+						<td><div class="check-icon" ng-show="PROFILE.certificate.tankers"></div></td>
+						<td><div class="cross-icon" ng-hide="PROFILE.certificate.tankers"></div></td>
+					</tr>
+					
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

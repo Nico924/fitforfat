@@ -1,0 +1,20 @@
+<div ng-controller="TendersTripDetailCtrl">
+<!-- 	<my-menu left-icon="back-icon" 						right-icon="" 
+			 left-action="changeURL({{ back }});"	right-action="" >
+	</my-menu>
+ -->
+	<div class="menu-bar" ng-controller="UserInfoCtrl">
+		<div  ng-click="goBack()">
+			<div class="back-icon hitstate" ></div>
+		</div>
+			<span class="condensedFont"> {{ DRIVER.firstname + " " + DRIVER.lastname }} </span>
+			
+		<div class="" onclick="">
+			<div class="" ></div>
+		</div>
+	</div>
+
+	<div class="container-Dark container-big data-box">
+		<div ng-include="'partials/tripDetail.html'" ng-model="trip"></div>
+	</div>
+</div>

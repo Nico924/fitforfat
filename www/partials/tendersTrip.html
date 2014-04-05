@@ -1,0 +1,19 @@
+<div ng-controller="TendersTripCtrl">
+	<my-menu left-icon="menu-icon" right-icon="update-icon" left-action="extendMenu()"	right-action="tenders();" right-class="selected"></my-menu>
+	
+	<ul class="tab-bar-3 condensedFont">
+		<li class="hitstate"><a onclick="changeURL('#/tenders');">Pre-Plan</a></li>
+		<li class="selected-Dark hitstate">Trip Plan</li>
+		<li class="hitstate"><a onclick="changeURL('#/tendersHistory');">History</a></li>
+	</ul>
+
+	<div ng-show="isItAllDriverView" class="container-Dark selecteDriverMessage">
+		Please select an individual<br>driver to see this section.
+	</div>
+	
+	<div ng-hide="isItAllDriverView" class="data-box">
+		<div class="container-Dark container-big" ng-repeat="trip in TENDERSTRIP.trip">
+			<div ng-include="'partials/tripDetail.html'" ng-model="trip"></div>
+		</div>
+	</div>
+</div>

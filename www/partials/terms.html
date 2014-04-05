@@ -1,0 +1,23 @@
+<div ng-controller="TermsCtrl">
+	<div ng-show="isNotAccepted"> <my-menu title="TERMS OF SERVICE"></my-menu> </div>
+	<div ng-hide="isNotAccepted" > <my-menu title="{{ fullName }}" left-icon="back-icon" left-action="changeURL('#/settings');"></my-menu> </div>
+
+		
+	<div class="container-green" style="height:10px;padding:0px;"></div>
+	<div class="container-black">
+
+	    <div id="terms"></div>
+
+        <div ng-show="isLoaded">
+            <div ng-show="isNotAccepted" class="button-green bottomSpace-normal hitstate" onclick="AcceptationDone();nextPageFlow();">
+                ACCEPT >
+            </div>
+            <div ng-show="isNotAccepted" class="button-red hitstate" onclick="changeURL('#/login');"> 
+                NO THANKS >
+            </div>
+    
+            <div ng-hide="isNotAccepted" class="button-grey"> ACCEPTED </div>
+        </div>
+	</div>
+</div>
+

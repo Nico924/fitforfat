@@ -1,0 +1,25 @@
+<script type="text/javascript">pageReady();</script>
+<my-menu title="SIGN IN"></my-menu>
+
+<div class="container-green container-huge no-scroll" ng-controller="LoginCtrl">
+
+    <img class="header-logo-signin bottomSpace-huge" src="css/assets/signin_logo.png"/>
+
+    <form ng-submit="submitLogin()">
+        <div class="input_email bottomSpace-sticky hitstate">
+        	<input type="text" placeholder="EMAIL ADDRESS" name="inputEmail" ng-model="inputEmail" ng-change="checkEmail()">
+        </div>
+        <div class="input_password bottomSpace-big hitstate">
+        	<input type="password" placeholder="PASSWORD"  ng-model="inputPassword" >
+        </div>
+        
+        <div class="input_submit bottomSpace-big hitstate">
+        	<input type="submit" value="SIGN IN">
+        </div>
+    </form>
+    <br/>
+    <a class="hitstate" onclick="openExternalLink('http://qaportal.modetransportation.com/mt/forgotPassword/faces/m/comtrak/reset/forgot.xhtml','','Forgot Password','login');" style='font-size:100%;color:#FFF;'>
+        <b>FORGOT PASSWORD ?</b>
+    </a>
+
+</div>
