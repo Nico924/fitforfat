@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" lang="javascript" src="js/track.js"> </script>
+</head>
+<body>
+<p id="demo">This is a paragraph</p>
+
+
+
+
+<script>
+
+
+test = new track()
+var t1 = {lat: 40.78406772015, lon: -73.95647406578064, timestamp: 0}
+var t2 = {lat: 40.78591988079101,lon: -73.95514369010925, timestamp: 1}
+var t3 = {lat: 40.78533499353193,lon: -73.95346999168396, timestamp: 2}
+var t4 = {lat: 40.784571382969, lon: -73.95190358161926, timestamp: 3}
+var t5 = {lat: 40.78276792742459,lon: -73.95323395729065, timestamp: 4}
+addTP(test,t1)
+addTP(test,t2)
+addTP(test,t3)
+addTP(test,t4)
+addTP(test,t5)
+
+alert("Total Distance:"+totaldistance_meters(test) +" meters")
+alert("Max Speed:"+ maxvelocity(test) + "mps")
+
+</script>
+
+</body>
+</html>
