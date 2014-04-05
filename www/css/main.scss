@@ -1,0 +1,14 @@
+//Bootstrap
+@import "vendor/bootstrap-theme";
+@import "vendor/bootstrap";
+// Modules
+@import "modules/colors";
+@import "modules/all";
+// Partials
+
+//icon part (so it has a highest priority)
+@import "modules/icon";
+
+// Third-party
+@import "vendor/mapbox";
+

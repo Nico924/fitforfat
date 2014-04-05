@@ -1,75 +1,53 @@
 <!DOCTYPE html>
-<html ng-app='mainApp'>
-	<head>
-        <link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <meta name="format-detection" content="telephone=no" />
-        
-		<!-- Phonegap -->
-        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-		<script type="text/javascript" charset="utf-8" src="PushNotification.js"></script>
-		
-		<!-- Libraries -->
-		<script src="lib/jquery-2.0.3.min.js"></script>
-		<script type="application/javascript" src="lib/fastclick.js"></script>
-		<script src="lib/angular/angular.js"></script>
-        <script src="lib/idangerous.swiper.js"></script>
-        <script src="lib/jquery.dotdotdot.min.js"></script>
-		
-		<!-- Application -->
-		<script src="js/variables.js"></script>
-		<script src="js/app.js"></script>
-		<script src="js/filter.js"></script>
-		<script src="js/lib.js"></script>
-		<script src="js/directives.js"></script>
-		<script src="js/urls.js"></script>
-		<script src="js/push.js"></script>
-		<script src="js/init.js"></script>
+<html lang="en" ng-app="app">
+<head>
+	<title>Fit for Fat</title>
+	 <!--[if lte IE 9]>
+    <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <script>
+          document.createElement('ng-include');
+          document.createElement('ng-pluralize');
+          document.createElement('ng-view');
 
-		<!-- Controller -->
-		<script src="js/controllers/login.js"></script>
-		<script src="js/controllers/userInfo.js"></script>
-		<script src="js/controllers/menu.js"></script>
-		<script src="js/controllers/changeDriver.js"></script>
-		<script src="js/controllers/changePassword.js"></script>
-		<script src="js/controllers/dashboard.js"></script>
-		<script src="js/controllers/dashboardFuelDetail.js"></script>
-		<script src="js/controllers/dashboardLastWeek.js"></script>
-		<script src="js/controllers/payStubs.js"></script>
-		<script src="js/controllers/profile.js"></script>
-		<script src="js/controllers/profileContactDetail.js"></script>
-		<script src="js/controllers/resetPassword.js"></script>
-		<script src="js/controllers/safety.js"></script>
-		<script src="js/controllers/rejectReason.js"></script>
-		<script src="js/controllers/tenders.js"></script>
-		<script src="js/controllers/tendersTrip.js"></script>
-		<script src="js/controllers/tendersTripDetail.js"></script>
-		<script src="js/controllers/tendersHistory.js"></script>
-		<script src="js/controllers/terms.js"></script>
-        <script src="js/controllers/externalLink.js"></script>
-        <script src="js/controllers/settings.js"></script>
+          // Optionally these for CSS
+          document.createElement('ng:include');
+          document.createElement('ng:pluralize');
+          document.createElement('ng:view');
+    </script>
+    <![endif]-->
+	<link href="css/main.css" rel="stylesheet" type="text/css">
 
-	</head>
-	<body>
-		<div class="loadingView">Loading...</div>
-		
-		<div class="mainView" ng-view></div>
+	<script type="text/javascript" src="lib/jquery/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="lib/angular/angular.js"></script>    
+    <script type="text/javascript" src="lib/angular/angular-sanitize.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-route.js"></script>
 
-		<div class="noData-box container-Dark"></div>
-		
-		<div class="popUpView">
-			<div class="popUp">
-				<div class="title"></div>
-				<div class="content"></div>
-				<table class="buttons">
-					<tr>
-						<td id="popUpCancel" class="button-red white-txt" tabindex="2">CANCEL</td>
-						<td id="popUpOk" class="button-green white-txt" tabindex="1">OK</td>
-					</tr>
-				</table>
-			</div>
-		</div>
-
-	</body>
+    <script src="js/config.js"></script>
+    <script src="js/helper.js"></script>
+    <script src="js/functions.js"></script>
+    
+    <script src="js/factories.js"></script>
+	<script src="js/directives.js"></script>
+    <!-- Controllers -->
+    <script src="js/controllers/controllers.js"></script>
+    <script src="js/controllers/header.js"></script>
+    <script src="js/controllers/post.js"></script>
+	<script src="js/controllers/store.js"></script>
+	<script src="js/controllers/tracking.js"></script>
+    <!-- /Controllers -->
+	<script src="js/app.js"></script>
+    
+    <!-- PhoneGap plugin -->
+    <script src="cordova.js"></script>
+    <script src="geolocation.js"></script>
+    <!-- /PhoneGap plugin-->
+    
+</head>
+<body>
+    <footer ng-include="'partials/header.html'"  ng-controller="HeaderController"></footer>
+	<div ng-view></div>
+    <footer ng-include="'partials/footer.html'"></footer>
+</body>
 </html>
