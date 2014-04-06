@@ -5,17 +5,26 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
             "lon":position.coords.longitude,
             "timestamp":position.timestamp
         };
-        console.log(position);
+        var message='Latitude: '          + position.coords.latitude          + '\n' +
+          'Longitude: '         + position.coords.longitude         + '\n' +
+          'Altitude: '          + position.coords.altitude          + '\n' +
+          'Accuracy: '          + position.coords.accuracy          + '\n' +
+          'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+          'Heading: '           + position.coords.heading           + '\n' +
+          'Speed: '             + position.coords.speed             + '\n' +
+          'Timestamp: '         + position.timestamp                + '\n';
+        helper.showAlert(message,"DEBUG");
         $scope.$apply(function($scope){
             $scope.trackin.addTp(myPos);
             //time
             if($scope.trackin.trackpoints.length>1){
-            $scope.current_time=$scope.trackin.totaltime_miliseconds();
+ $scope.current_time=$scope.trackin.totaltime_miliseconds();
                 $scope.timing=convertTimeString($scope.current_time);
                 //distance
-                $scope.distance=$scope.trackin.totaldistance_meters();
+               var dist=$scope.trackin.totaldistance_meters(); $scope.distance=Math.round(dist*10)/10
                 //speed
-                $scope.velocity=$scope.trackin.avgvelocity();
+                var velocity=$scope.trackin.avgvelocity();
+                $scope.velocity=Math.round(velocity*10)/10
                 $scope.speed=$scope.velocity+" m/s";
                 $scope.points=computePoint($scope.velocity,$scope.distance,$scope.numPeople);
             }  
@@ -41,6 +50,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
         $scope.running=false;
         clearInterval($scope.interval);
         helper.showAlert("You have won "+$scope.points+" point(s), use them in the reward store");
+        $scope.trackin=new track();
     }
     /*
     Handle Mode

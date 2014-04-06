@@ -52,6 +52,14 @@ body{
     font-family: 'Nunito','Spinnaker', sans-serif;
 
 }
+.background{
+    background-position:center;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+.background-contain{
+    background-size:contain;
+}
 .clear{
     clear:both;
 }

@@ -34,7 +34,7 @@ controllers.controller('ChallengeController', ['$scope','$http', function($scope
                 break;
             }
         }
-        helper.showAlert("The challenge "+challenge.name+" has successfully been added to your challenges");
+        helper.showAlert("The challenge "+challenge.title+" has successfully been added to your challenges");
     }
     /*
     Request more info 

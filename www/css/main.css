@@ -1,6 +1,16 @@
 /*
 
 */
+.grey {
+  color: black;
+  color: #d2d2d2; }
+
+.back-grey {
+  background-color: #d2d2d2; }
+
+.back-grey:active {
+  background-color: #c3c3c3; }
+
 .orange {
   color: white;
   color: #d2552c; }
@@ -73,6 +83,14 @@ body {
   background-color: white;
   margin: 0px;
   font-family: 'Nunito','Spinnaker', sans-serif; }
+
+.background {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.background-contain {
+  background-size: contain; }
 
 .clear {
   clear: both; }
@@ -237,13 +255,63 @@ header {
     margin-top: 13px; }
 
 .challenge-list {
-  padding: 12px;
+  padding: 15px 18px;
   overflow: scroll; }
   .challenge-list .challenges .title {
     text-transform: uppercase;
     font-size: 15px;
     padding-bottom: 5px;
-    border-bottom: 3px solid #f0f0f0; }
+    border-bottom: 3px solid #f0f0f0;
+    margin-bottom: 15px; }
+  .challenge-list .challenges .element {
+    color: #5a5a5a;
+    padding: 0px 2px;
+    padding-bottom: 14px; }
+    .challenge-list .challenges .element .left {
+      float: left;
+      width: 22%;
+      margin-right: 3%; }
+      .challenge-list .challenges .element .left .img {
+        width: 80px;
+        margin: auto;
+        height: 80px;
+        border-radius: 60px;
+        margin-bottom: 10px; }
+      .challenge-list .challenges .element .left .info {
+        color: black;
+        text-align: center;
+        text-transform: uppercase; }
+        .challenge-list .challenges .element .left .info .date {
+          font-size: 12px; }
+        .challenge-list .challenges .element .left .info .hour {
+          font-size: 9px; }
+    .challenge-list .challenges .element .content {
+      float: right;
+      width: 75%; }
+      .challenge-list .challenges .element .content .challenge-title {
+        font-size: 14px;
+        text-transform: uppercase; }
+      .challenge-list .challenges .element .content .challenge-teaser {
+        font-size: 10px; }
+      .challenge-list .challenges .element .content .challenge-beward {
+        font-weight: bold;
+        font-size: 10px;
+        margin-bottom: 4px; }
+      .challenge-list .challenges .element .content .participation {
+        margin-right: 8px; }
+      .challenge-list .challenges .element .content .actions, .challenge-list .challenges .element .content .message {
+        text-transform: uppercase;
+        font-size: 10px; }
+      .challenge-list .challenges .element .content .actions {
+        margin-top: 20px; }
+        .challenge-list .challenges .element .content .actions .button {
+          font-size: 10px;
+          text-align: center;
+          min-width: 80px;
+          padding: 5px 8px;
+          margin-right: 5px;
+          display: inline-block;
+          vertical-align: top; }
 
 /* required styles */
 .leaflet-map-pane,

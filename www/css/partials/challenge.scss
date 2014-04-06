@@ -1,5 +1,5 @@
 .challenge-list{
-    padding:12px;
+    padding:15px 18px;
     overflow: scroll;
     .challenges{
         .title{
@@ -7,10 +7,72 @@
             font-size: 15px;
             padding-bottom: 5px;
             border-bottom: 3px solid $light-grey;
+            margin-bottom: 15px;
         }
         .element{
-            
+            color:rgb(90,90,90);
+            padding: 0px 2px;
+            padding-bottom: 14px;
+            .left{
+                float: left;
+                width: 22%;
+                margin-right: 3%;
+                .img{
+                    width:80px;
+                    margin: auto;
+                    height: 80px;
+                    border-radius: 60px;
+                    margin-bottom: 10px;
+                }  
+                .info{
+                    color:black;
+                    text-align: center;
+                    text-transform: uppercase;
+                    .date{
+                        font-size:12px;
+                    }
+                    .hour{
+                        font-size:9px;
+                    }
+                }
+            }
+            .content{
+                float:right;
+                width: 75%;
+                .challenge-title{
+                    font-size: 14px;
+                    text-transform: uppercase;
+                }
+                .challenge-teaser{
+                    font-size:10px;
+                }
+                .challenge-beward{
+                    font-weight: bold;
+                    font-size: 10px;
+                    margin-bottom: 4px;
+                }
+                .participation{
+                    margin-right: 8px;
+                }
+                .actions,.message{
+                    text-transform: uppercase;
+                    font-size: 10px;
+                }
+                .actions{
+                    margin-top: 20px;
+                    .button{
+                        font-size:10px;
+                        text-align: center;
+                        min-width: 80px;
+                        padding: 5px 8px;
+                        margin-right: 5px;
+                        display: inline-block;
+                        vertical-align: top;
+                    }
+                }
+            }
         }
     }
     
 }
+
