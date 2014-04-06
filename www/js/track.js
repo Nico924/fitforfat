@@ -3,15 +3,11 @@ function track()
     this.trackpoints = new Array();
 }
 
-// Trackpoint LAT & LONG in DEGREES
-t1 = {lat:51.1329624, lon:4.391393, timestamp: 0}
-t2 = {lat:51.1337225, lon:4.3896425, timestamp: 5}
-t3 = {lat:3, lon:3, timestamp: 6}
-
-
 track.prototype.addTp=function(trackpoint)
 {
-    this.trackpoints.push(trackpoint);
+    var timestamp=Date.now();
+    trackpoint.timestamp=timestamp;
+    this.trackpoints.push(timestamp);
 }
 
 track.prototype.distance_meters=function(tp1,tp2){

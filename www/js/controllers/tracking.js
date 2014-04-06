@@ -2,8 +2,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
 	$scope.interpretPosition=function(position){
         var myPos={
             "lat":position.coords.latitude,
-            "lon":position.coords.longitude,
-            "timestamp":position.timestamp
+            "lon":position.coords.longitude
         };
         var message='Latitude: '          + position.coords.latitude          + '\n' +
           'Longitude: '         + position.coords.longitude         + '\n' +
