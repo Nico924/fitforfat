@@ -4,22 +4,30 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
             "lat":position.coords.latitude,
             "lon":position.coords.longitude
         };
-        $scope.$apply(function($scope){
-            $scope.trackin.addTp(myPos);
-            //time
-            if($scope.trackin.trackpoints.length>1){
-// $scope.current_time=$scope.trackin.totaltime_miliseconds();
+        console.log(position);
+        var control=true;
+        if($scope.trackin.trackpoints.length>1){
+            control=$scope.trackin.control(myPos,$scope.multiplier*position.accuracy);
+        }
+        if(control){
+            $scope.$apply(function($scope){
+                
+                $scope.trackin.addTp(myPos);
+                //time
+                if($scope.trackin.trackpoints.length>1){
+    // $scope.current_time=$scope.trackin.totaltime_miliseconds();
 
-                //distance
-               var dist=$scope.trackin.totaldistance_meters(); $scope.distance=Math.round(dist*10)/10
-                //speed
-                var velocity=$scope.trackin.avgvelocity();
-                $scope.velocity=Math.round(velocity*10)/10
-                $scope.speed=$scope.velocity+" m/s";
+                    //distance
+                   var dist=$scope.trackin.totaldistance_meters(); $scope.distance=Math.round(dist*10)/10
+                    //speed
+                    var velocity=$scope.trackin.avgvelocity();
+                    $scope.velocity=Math.round(velocity*10)/10
+                    $scope.speed=$scope.velocity+" m/s";
 
-                $scope.points=computePoint($scope.velocity,$scope.distance,$scope.numPeople);
-            }
-        });
+                    $scope.points=computePoint($scope.velocity,$scope.distance,$scope.numPeople);
+                }
+            });
+        }
 
     }
     $scope.handleErrorPosition=function(error){
@@ -77,10 +85,11 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
     Constructor
     */
     $scope.init=function(){
+        $scope.multiplier=0.3;
         $scope.mode="solo";
         $scope.challenge=false;
         $scope.numPeople=1;
-        $scope.frequency=1000;//ms
+        $scope.frequency=2000;//ms
         $scope.trackin=new track();
         $scope.running=false;
         $scope.distance=0;

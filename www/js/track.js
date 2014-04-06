@@ -10,6 +10,18 @@ track.prototype.addTp=function(trackpoint)
     this.trackpoints.push(trackpoint);
 }
 
+track.prototype.control=function(newPoint,treshold){
+    
+    var lastPos=this.trackpoints[this.trackpoints.length-1];
+    console.log(lastPos);
+    console.log(newPoint);
+    var distance=this.distance_meters(lastPos,newPoint);
+    if(distance>treshold){
+        return true;
+    }
+    return false;
+}
+
 track.prototype.distance_meters=function(tp1,tp2){
     lat1 = tp1.lat
     lat2 = tp2.lat

@@ -160,5 +160,5 @@ function changeURL(url){
 Compute scopre
 */
 function computePoint(speed,distance,numPeople){
-    return Math.round(Math.log(Math.log(numPeople*Math.E)*distance*(speed/2.5)));
+    return Math.round(Math.log(numPeople*Math.E)*(distance/10)*(speed/2.5));
 }
