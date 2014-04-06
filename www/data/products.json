@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "name":"Decathlon voucher",
+        "img":"img/decathlon.jpg",
+        "price":80
+    },
+    {
+        "id":2,
+        "name":"New Balance NBX HALF-ZIP",
+        "img":"img/newbalance.jpg",
+        "price":120    
+    },
+    {
+        "id":3,
+        "name":"Ascis -gel -Excel33",
+        "img":"img/asics.jpg",
+        "price":233    
+    },
+    {
+        "id":4,
+        "name":"Apple IPOD touch - 16GO",
+        "img":"img/ipod.jpg",
+        "price":380    
+    },
+    {
+        "id":5,
+        "name":"Decathlon voucher",
+        "img":"img/decathlon.jpg",
+        "price":80
+    },
+    {
+        "id":6,
+        "name":"New Balance NBX HALF-ZIP",
+        "img":"img/newbalance.jpg",
+        "price":120    
+    },
+    {
+        "id":7,
+        "name":"Ascis -gel -Excel33",
+        "img":"img/asics.jpg",
+        "price":233    
+    },
+    {
+        "id":8,
+        "name":"Apple IPOD touch - 16GO",
+        "img":"img/ipod.jpg",
+        "price":380    
+    }
+]

@@ -27,7 +27,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
     }
     $scope.watchPosition=function(){ 
         $scope.interval=setInterval(function(){
-            var watchID = navigator.geolocation.getCurrentPosition($scope.interpretPosition,$scope.handleErrorPosition,{enableHighAccuracy :true});
+            var watchID = navigator.geolocation.getCurrentPosition($scope.interpretPosition,$scope.handleErrorPosition);
         },$scope.frequency)
     }
     /*
