@@ -9,7 +9,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
             //time
             if($scope.trackin.trackpoints.length>1){
 //                $scope.current_time=$scope.trackin.totaltime_miliseconds();
-                $scope.current_time=$scope.startTime - Date.now();
+                $scope.current_time= Date.now() - $scope.startTime;
                 $scope.timing=convertTimeString($scope.current_time);
                 //distance
                var dist=$scope.trackin.totaldistance_meters(); $scope.distance=Math.round(dist*10)/10
