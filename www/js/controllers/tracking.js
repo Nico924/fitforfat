@@ -34,6 +34,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
     Control functions
      */
     $scope.start=function(){
+        $scope.current_time = 0
         $scope.running=true;
         $scope.watchPosition();
         $scope.startTime = Date.now();
