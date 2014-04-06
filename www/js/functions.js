@@ -91,16 +91,16 @@ function getParametersUrl(){
             return parameters;
         } catch (e) {
             return {};
-        }   
+        }
     }
     else{
         return {};
     }
 }
 function scrollTop(elem){
-    $("body,html").animate({  
-        scrollTop:elem.offset().top-70 
-     }, 500);  
+    $("body,html").animate({
+        scrollTop:elem.offset().top-70
+     }, 500);
 }
 function scrollTopSearch(){
     var elem=$(".page-tab");
@@ -112,9 +112,9 @@ function scrollTopSearch(){
     if(elem.length!=0){
         if(top==0)
             top=elem.offset().top+65;
-        $("body,html").animate({  
+        $("body,html").animate({
             scrollTop:top
-        }, 500);  
+        }, 500);
     }
 }
 var print=false;
@@ -160,5 +160,5 @@ function changeURL(url){
 Compute scopre
 */
 function computePoint(speed,distance,numPeople){
-        return Math.round(Math.log(numPeople*Math.E)*distance*(speed/2.5));
+    return Math.round(Math.log(Math.log(numPeople*Math.E)*distance*(speed/2.5)));
 }
