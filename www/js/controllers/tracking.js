@@ -17,6 +17,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
                 var velocity=$scope.trackin.avgvelocity();
                 $scope.velocity=Math.round(velocity*10)/10
                 $scope.speed=$scope.velocity+" m/s";
+                $scope.speed=$scope.velocity+ myPos.lat;
                 $scope.points=computePoint($scope.velocity,$scope.distance,$scope.numPeople);
             }
         });
