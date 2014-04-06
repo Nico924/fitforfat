@@ -6,10 +6,10 @@
         <div class="sub-title">
             Which kind of track ?
         </div>
-        <div class="option button selected" onclick="switchActivated($(this))">
+        <div class="option button selected" onclick="switchActivated($(this))" ng-click="single()">
             solo
         </div>
-        <div class="option button" onclick="switchActivated($(this))">
+        <div class="option button" onclick="switchActivated($(this))" ng-click="multiple()">
             duo +
         </div>
         <div class="clear"></div>
@@ -49,7 +49,7 @@
                     You rock since
                 </div>
                 <div class="info-value orange">
-                    {{time}}
+                    {{timing}}
                 </div>
                 <div class="sub-info">times</div>
             </div>

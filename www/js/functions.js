@@ -131,6 +131,16 @@ function fixIE(){
     },100);
 }
 /*
+Convert time for the user
+*/
+function convertTimeString(time){
+    var seconds=Math.round(time/1000);
+    var sec=seconds % 60;
+    var min=Math.floor(seconds/60);
+    return min+"''"+sec+"'";
+}
+/*
+Switch activated
 */
 function switchActivated(elem){
     if(!elem.hasClass("selected")){
@@ -138,4 +148,10 @@ function switchActivated(elem){
         parent.find(".selected").removeClass("selected");
         elem.addClass("selected");
     }
+}
+/*
+Compute scopre
+*/
+function computePoint(speed,distance,numPeople){
+        return Math.round(Math.log(numPeople*Math.E)*distance*(speed/2.5));
 }

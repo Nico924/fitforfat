@@ -9,21 +9,21 @@ t2 = {lat:51.1337225, lon:4.3896425, timestamp: 5}
 t3 = {lat:3, lon:3, timestamp: 6}
 
 
-function addTP(track_obj,trackpoint)
+track.prototype.addTp=function(trackpoint)
 {
-    track_obj.trackpoints.push(trackpoint);
+    this.trackpoints.push(trackpoint);
 }
 
-function distance_meters(tp1,tp2){
+track.prototype.distance_meters=function(tp1,tp2){
     lat1 = tp1.lat
     lat2 = tp2.lat
     lon1 = tp1.lon
     lon2 = tp2.lon
     var R = 6371; // km (radius of earth)
-    var dLat = deg2rad(lat2-lat1)
-    var dLon = deg2rad(lon2-lon1)
-    var lat1 = deg2rad(lat1);
-    var lat2 = deg2rad(lat2);
+    var dLat = this.deg2rad(lat2-lat1)
+    var dLon = this.deg2rad(lon2-lon1)
+    var lat1 = this.deg2rad(lat1);
+    var lat2 = this.deg2rad(lat2);
 
     var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
             Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2);
@@ -32,26 +32,26 @@ function distance_meters(tp1,tp2){
     return( d*1000)
 }
 
-function timediff(tp1,tp2){
+track.prototype.timediff=function(tp1,tp2){
     return tp2.timestamp -tp1.timestamp
 }
 
 
-function velocity(tp1,tp2){
-    dist = distance_meters(tp1,tp2);
-    dt = timediff(tp1,tp2)
+track.prototype.velocity=function(tp1,tp2){
+    dist = this.distance_meters(tp1,tp2);
+    dt = this.timediff(tp1,tp2)
     if (dt===0)
         return 0;
 
     return dist/dt;
 }
 
-function maxvelocity(track_obj){
+track.prototype.maxvelocity=function(){
     maxvel = 0;
-    for(i=1;i<track_obj.trackpoints.length;i++){
-        tp1 = track_obj.trackpoints[i-1];
-        tp2 = track_obj.trackpoints[i];
-        vel = velocity(tp1,tp2)
+    for(i=1;i<this.trackpoints.length;i++){
+        tp1 = this.trackpoints[i-1];
+        tp2 = this.trackpoints[i];
+        vel = this.velocity(tp1,tp2)
         if (vel > maxvel){
             maxvel = vel
         }
@@ -62,40 +62,40 @@ function maxvelocity(track_obj){
 
 
 // Return an array of velocities over time
-function velocities(track_obj){
+track.prototype.velocities=function(){
     var list = new Array()
-    for(i=1;i<track_obj.trackpoints.length;i++){
-        tp1 = track_obj.trackpoints[i-1];
-        tp2 = track_obj.trackpoints[i];
-        list.push(velocity(tp1,tp2))
+    for(i=1;i<this.trackpoints.length;i++){
+        tp1 = this.trackpoints[i-1];
+        tp2 = this.trackpoints[i];
+        list.push(this.velocity(tp1,tp2))
     }
 
     return list;
 }
 
-function totaltime_seconds(track_obj){
-    return  track_obj.trackpoints.map(getTime).reduce(function(a, b) { return a + b });
+track.prototype.totaltime_miliseconds=function(){
+    return  this.trackpoints.map(this.getTime).reduce(function(a, b) { return b - a });
 }
 
-function getTime(trackpoint){
+track.prototype.getTime=function(trackpoint){
     return  trackpoint.timestamp;
 }
 
-function totaldistance_meters(track_obj){
+track.prototype.totaldistance_meters=function(){
     dist = 0;
-    for(i=1;i<track_obj.trackpoints.length;i++){
-        tp1 = track_obj.trackpoints[i-1];
-        tp2 = track_obj.trackpoints[i];
-        dist += distance_meters(tp1,tp2)
+    for(i=1;i<this.trackpoints.length;i++){
+        tp1 = this.trackpoints[i-1];
+        tp2 = this.trackpoints[i];
+        dist += this.distance_meters(tp1,tp2)
     }
     return dist;
 }
 
-function avgvelocity(track_obj){
-    return velocities(track_obj).reduce(function(a, b) { return a + b })/totaltime_seconds(track_obj);
+track.prototype.avgvelocity=function(){
+    return this.velocities().reduce(function(a, b) { return a + b })/this.totaltime_miliseconds();
 }
 
 
-function deg2rad(deg) {
+track.prototype.deg2rad=function(deg) {
     return deg * (Math.PI/180)
 }
