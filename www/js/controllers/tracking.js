@@ -8,19 +8,19 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
             $scope.trackin.addTp(myPos);
             //time
             if($scope.trackin.trackpoints.length>1){
-//                $scope.current_time=$scope.trackin.totaltime_miliseconds();
+// $scope.current_time=$scope.trackin.totaltime_miliseconds();
 
-                $scope.timing=convertTimeString($scope.current_time);
                 //distance
                var dist=$scope.trackin.totaldistance_meters(); $scope.distance=Math.round(dist*10)/10
                 //speed
                 var velocity=$scope.trackin.avgvelocity();
-
+                $scope.velocity=Math.round(velocity*10)/10
+                $scope.speed=$scope.velocity+" m/s";
                 $scope.points=computePoint($scope.velocity,$scope.distance,$scope.numPeople);
             }
         });
-    }
 
+    }
     $scope.handleErrorPosition=function(error){
         helper.showAlert('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
@@ -32,14 +32,18 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
     }
     /*
     Control functions
-     */
+    */
+
     $scope.start=function(){
         $scope.current_time = 0
         $scope.running=true;
         $scope.watchPosition();
         $scope.startTime = Date.now();
-        $scope.chrono = setInterval(function(){ $scope.current_time= Date.now() - $scope.startTime ;},1000);
+        $scope.chrono = setInterval(function(){ $scope.current_time= Date.now() - $scope.startTime;
+$scope.timing=convertTimeString($scope.current_time);
+                             },1000);
     }
+
     $scope.stop=function(){
         $scope.running=false;
         clearInterval($scope.interval);
