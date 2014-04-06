@@ -26,9 +26,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
                   'message: ' + error.message + '\n');
     }
     $scope.watchPosition=function(){ 
-        $scope.interval=setInterval(function(){
-            var watchID = navigator.geolocation.getCurrentPosition($scope.interpretPosition,$scope.handleErrorPosition);
-        },$scope.frequency)
+            $scope.watchID = navigator.geolocation.watchPosition($scope.interpretPosition,$scope.handleErrorPosition,{enableHighAccuracy: true });
     }
     /*
     Control functions
@@ -39,7 +37,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
     }
     $scope.stop=function(){
         $scope.running=false;
-        clearInterval($scope.interval);
+        navigator.geolocation.clearWatch($scope.watchID);
         helper.showAlert("You have won "+$scope.points+" point(s), use them in the reward store");
         $scope.trackin=new track();
     }
