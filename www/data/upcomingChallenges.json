@@ -1,0 +1,41 @@
+[
+    {
+        "id":1,
+        "title":"10 Miles of Antwerp",
+        "teaser":"Out on your running shoes grease those legs and give the best of yourself at braining as April 27th is fast approaching ...",
+        "description":"Out on your running shoes grease those legs and give the best of yourself at braining as April 27th is fast approaching ...",
+        "beward":"a new coffee machine for your workteam",
+        "peopleRegistered":4,
+        "capacity":20,
+        "date":"27/05/2014",
+        "hour":"10:00 AM",
+        "img":"img/antwerp.png",
+        "type":2
+    },
+    {
+        "id":2,
+        "title":"Color run brussels",
+        "teaser":"The Color Run, also known as the \"Happiest 5k on the Planet\", is a 5k run where thousands of runners...",
+        "description":"The Color Run, also known as the \"Happiest 5k on the Planet\", is a 5k run where thousands of runners...",
+        "beward":"Babyfoot table for your department",
+        "peopleRegistered":1,
+        "capacity":20,
+        "date":"22/05/2014",
+        "hour":"9:00 AM",
+        "img":"img/bxl.png",
+        "type":2
+    },
+    {
+        "id":3,
+        "title":"10 Miles of Genk",
+        "teaser":"The  ...",
+        "description":"The  ...",
+        "beward":"a new TV for your department",
+        "peopleRegistered":10,
+        "capacity":20,
+        "date":"03/06/2014",
+        "hour":"11:00 AM",
+        "img":"img/antwerp.png",
+        "type":2
+    }
+]

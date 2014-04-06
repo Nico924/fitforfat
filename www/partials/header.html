@@ -11,24 +11,24 @@
     <div class="logo"></div>
 </div>
 <div class="menu">
-    <div class="element back-light-orange selected link" onclick="switchActivated($(this))">
-        <a href="#/tracking"></a>
+    <div class="element back-light-orange {{elementOneSelected}} link" onclick="switchActivated($(this))">
+        <a onclick="changeURL('#/tracking')"></a>
         <img class="activated" src="assets/runner_grey.png"/>
         <img src="assets/runner_white.png"/>
         <div class="txt">
             Tracking
         </div>
     </div>
-    <div class="element back-orange link" onclick="switchActivated($(this))">
-        <a href="#/challenge"></a>
+    <div class="element back-orange link {{elementTwoSelected}}" onclick="switchActivated($(this))">
+        <a onclick="changeURL('#/challenge')"></a>
         <img class="activated" src="assets/calendar_grey.png"/>
         <img src="assets/calendar_white.png"/>
         <div class="txt">
             Challenges
         </div>
     </div>
-    <div class="element back-bruin link" onclick="switchActivated($(this))">
-        <a href="#/store"></a>
+    <div class="element back-bruin link {{elementThreeSelected}}" onclick="switchActivated($(this))">
+        <a onclick="changeURL('#/store')"></a>
         <img class="activated" src="assets/trophy_grey.png"/>
         <img src="assets/trophy_white.png"/>
         <div class="txt">

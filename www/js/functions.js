@@ -135,8 +135,13 @@ Convert time for the user
 */
 function convertTimeString(time){
     var seconds=Math.round(time/1000);
+    console.log(seconds);
     var sec=seconds % 60;
+    console.log(seconds)
     var min=Math.floor(seconds/60);
+    console.log(min);
+    var s=min+"''"+sec+"'";
+    console.log(s);
     return min+"''"+sec+"'";
 }
 /*
@@ -148,6 +153,12 @@ function switchActivated(elem){
         parent.find(".selected").removeClass("selected");
         elem.addClass("selected");
     }
+}
+/*
+Change URL
+*/
+function changeURL(url){
+    window.location.hash = url;
 }
 /*
 Compute scopre

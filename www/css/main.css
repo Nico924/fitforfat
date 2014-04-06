@@ -179,6 +179,8 @@ header {
     font-size: 27px;
     padding: 0px 30px;
     margin-bottom: 38px; }
+  .tracking .title-challenge {
+    margin: 20px 0px; }
   .tracking .sub-title {
     font-size: 21px;
     margin-bottom: 19px; }
@@ -206,6 +208,8 @@ header {
       margin-bottom: 20px; }
     .tracking .distance .unit {
       font-size: 13px; }
+  .tracking .distance-challenge {
+    margin-bottom: 35px; }
   .tracking .info {
     text-align: center;
     font-size: 10px;
@@ -231,6 +235,15 @@ header {
     border-right: 3px solid #d2d2d2; }
   .tracking .end.button {
     margin-top: 13px; }
+
+.challenge-list {
+  padding: 12px;
+  overflow: scroll; }
+  .challenge-list .challenges .title {
+    text-transform: uppercase;
+    font-size: 15px;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #f0f0f0; }
 
 /* required styles */
 .leaflet-map-pane,

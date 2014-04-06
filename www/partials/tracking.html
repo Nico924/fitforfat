@@ -1,62 +1,76 @@
 <div class="tracking">
-    <div ng-if="!running">
-        <div class="title">
-            Are you ready to run ?
+    <div ng-if="!challenge">
+        <div ng-if="!running">
+            <div class="title">
+                Are you ready to run ?
+            </div>
+            <div class="sub-title">
+                Which kind of track ?
+            </div>
+            <div class="option button selected" onclick="switchActivated($(this))" ng-click="single()">
+                solo
+            </div>
+            <div class="option button" onclick="switchActivated($(this))" ng-click="multiple()">
+                duo +
+            </div>
+            <div class="clear"></div>
+            <div class="start button back-turquoise" ng-click="start()">
+                start
+            </div>
         </div>
-        <div class="sub-title">
-            Which kind of track ?
-        </div>
-        <div class="option button selected" onclick="switchActivated($(this))" ng-click="single()">
-            solo
-        </div>
-        <div class="option button" onclick="switchActivated($(this))" ng-click="multiple()">
-            duo +
-        </div>
-        <div class="clear"></div>
-        <div class="start button back-turquoise" ng-click="start()">
-            start
+        <div ng-if="running">
+            <div class="title-start">
+                You rock man !
+            </div>
+            <div class="distance">
+                <span>{{distance}}</span>
+                <div class="unit">m</div>
+            </div>
+            <div class="info">
+                <div class="points">
+                    <div class="info-title">
+                        you earn
+                    </div>
+                    <div class="info-value turquoise">
+                        {{points}}
+                    </div>
+                    <div class="sub-info">points</div>
+                </div>
+                <div class="middle">
+                    <div class="info-title">
+                        Your speed
+                    </div>
+                    <div class="info-value orange">
+                        {{speed}}
+                    </div>
+                    <div class="sub-info">speed</div>
+                </div>
+                <div>
+                    <div class="info-title">
+                        You rock since
+                    </div>
+                    <div class="info-value orange">
+                        {{timing}}
+                    </div>
+                    <div class="sub-info">times</div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="end button back-turquoise" ng-click="stop()">
+                ending my run
+            </div>
         </div>
     </div>
-    <div ng-if="running">
-        <div class="title-start">
-            You rock man !
-        </div>
-        <div class="distance">
-            <span>{{distance}}</span>
-            <div class="unit">m</div>
-        </div>
-        <div class="info">
-            <div class="points">
-                <div class="info-title">
-                    you earn
-                </div>
-                <div class="info-value turquoise">
-                    {{points}}
-                </div>
-                <div class="sub-info">points</div>
+    <div ng-if="challenge">
+            <div class="title title-challenge">
+                Are you ready to run ?
             </div>
-            <div class="middle">
-                <div class="info-title">
-                    Your speed
-                </div>
-                <div class="info-value orange">
-                    {{speed}}
-                </div>
-                <div class="sub-info">speed</div>
+            <div class="distance distance-challenge">
+                <span>{{distance}}</span>
+                <div class="unit">m</div>
             </div>
-            <div>
-                <div class="info-title">
-                    You rock since
-                </div>
-                <div class="info-value orange">
-                    {{timing}}
-                </div>
-                <div class="sub-info">times</div>
+            <div class="start button back-turquoise" ng-click="startChallenge()">
+                start
             </div>
-        </div>
-        <div class="clear"></div>
-        <div class="end button back-turquoise" ng-click="stop()">
-            ending my run
-        </div>
     </div>
 </div>

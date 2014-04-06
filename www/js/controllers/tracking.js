@@ -1,10 +1,11 @@
-controllers.controller('TrackingController', ['$scope','$http', function($scope,$http) {
+controllers.controller('TrackingController',['$scope','$http','$location', function($scope,$http,$location) {
 	$scope.interpretPosition=function(position){
         var myPos={
             "lat":position.coords.latitude,
             "lon":position.coords.longitude,
             "timestamp":position.timestamp
         };
+        console.log(position);
         $scope.$apply(function($scope){
             $scope.trackin.addTp(myPos);
             //time
@@ -29,6 +30,9 @@ controllers.controller('TrackingController', ['$scope','$http', function($scope,
             var watchID = navigator.geolocation.getCurrentPosition($scope.interpretPosition,$scope.handleErrorPosition);
         },$scope.frequency)
     }
+    /*
+    Control functions
+    */
     $scope.start=function(){
         $scope.running=true;
         $scope.watchPosition();
@@ -38,6 +42,9 @@ controllers.controller('TrackingController', ['$scope','$http', function($scope,
         clearInterval($scope.interval);
         helper.showAlert("You have won "+$scope.points+" point(s), use them in the reward store");
     }
+    /*
+    Handle Mode
+    */
     $scope.single=function(){
         $scope.mode="solo";
     }
@@ -46,18 +53,30 @@ controllers.controller('TrackingController', ['$scope','$http', function($scope,
         helper.showAlert("Open a Map to choose sport team mate(s)","Map");
     }
     /*
+    Handle start of a challenge
+    */
+    $scope.startChallenge=function(){
+        helper.showAlert("Start Challenge","Challenge");
+        //$scope.start();
+        //should verify challenge execution
+    }
+    /*
     Constructor
     */
     $scope.init=function(){
         $scope.mode="solo";
+        $scope.challenge=false;
         $scope.numPeople=1;
-        $scope.frequency=500;//ms
+        $scope.frequency=1000;//ms
         $scope.trackin=new track();
         $scope.running=false;
         $scope.distance=0;
         $scope.points=0;
         $scope.speed=0;
         $scope.timing="0'00''";
+        if($location.search().challenge==true){
+            $scope.challenge=true;
+        }
     }
     $scope.init();
 }]);

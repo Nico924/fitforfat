@@ -1,0 +1,13 @@
+<div class="challenge-list">
+    <div class="challenges">
+        <div class="title">My next challenges</div>
+            <div class="element" ng-repeat="challenge in myChallenges">
+            <div ng-include="'partials/challenge-elem.html'"></div>
+            </div>
+    </div>
+    <div class="challenges">
+        <div class="title">upcoming challenges</div>
+            <div class="element" ng-repeat="challenge in upcomingChallenges">
+            <div ng-include="'partials/challenge-elem.html'"></div>
+            </div>
+</div>

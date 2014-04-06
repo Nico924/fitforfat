@@ -1,0 +1,15 @@
+[
+    {
+        "id":4,
+        "title":"20 km of Brussels",
+        "teaser":"The Brussels 20km race takes you on a journey through Brussels most beautiful monuments and parks.",
+        "description":"The Brussels 20km race takes you on a journey through Brussels most beautiful monuments and parks...",
+        "beward":"One day off for every participant",
+        "peopleRegistered":12,
+        "capacity":20,
+        "date":"18/05/2014",
+        "hour":"10:00 AM",
+        "img":"img/bxl.png",
+        "type":1
+    }
+]

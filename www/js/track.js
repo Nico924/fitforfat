@@ -74,7 +74,7 @@ track.prototype.velocities=function(){
 }
 
 track.prototype.totaltime_miliseconds=function(){
-    return  this.trackpoints.map(this.getTime).reduce(function(a, b) { return b - a });
+    return  this.trackpoints[this.trackpoints.length-1].timestamp-this.trackpoints[0].timestamp;
 }
 
 track.prototype.getTime=function(trackpoint){
@@ -92,7 +92,11 @@ track.prototype.totaldistance_meters=function(){
 }
 
 track.prototype.avgvelocity=function(){
-    return this.velocities().reduce(function(a, b) { return a + b })/this.totaltime_miliseconds();
+    var time=this.totaltime_miliseconds();
+    if(time==0)
+        return 0;
+    var dist=this.totaldistance_meters();
+    return dist/(time/1000);
 }
 
 
