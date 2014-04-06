@@ -247,6 +247,8 @@ header {
   .tracking .points .info-value {
     font-size: 40px;
     margin-bottom: 3px; }
+  .tracking .points .icon-value {
+    position: relative; }
   .tracking .info.middle {
     border-left: 3px solid #d2d2d2;
     border-right: 3px solid #d2d2d2; }
@@ -338,8 +340,8 @@ header {
           height: 150px; } }
       @media only screen and (max-width: 380px) {
         .products .product .background {
-          width: 90%;
-          height: 150px; } }
+          width: 95%;
+          height: 155px; } }
       @media only screen and (max-width: 320px) {
         .products .product .background {
           width: 100%;
@@ -352,12 +354,15 @@ header {
     .products .product .price {
       color: #d2552c;
       margin-bottom: 8px; }
+      .products .product .price .icon-carrot {
+        position: relative;
+        top: -3px; }
 
 .icon-carrot {
-  background-image: url("../../img/carrot2.png");
-  background-size: 20px 20px;
-  height: 20px;
-  width: 20px;
+  background-image: url("assets/carrot2.png");
+  background-size: 23px 23px;
+  height: 23px;
+  width: 23px;
   display: inline-block;
   vertical-align: top; }
 

@@ -43,7 +43,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
     $scope.stop=function(){
         $scope.running=false;
         clearInterval($scope.interval);
-        helper.showAlert("You have won "+$scope.points+" point(s), use them in the reward store");
+        helper.showAlert("You have won "+$scope.points+" carrot(s), use them in the reward store");
         $scope.trackin=new track();
     }
     /*

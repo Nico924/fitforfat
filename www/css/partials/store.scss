@@ -24,8 +24,8 @@
                 height: 150px;
             }
             @media only screen and (max-width: 380px){
-                width:90%;
-                height: 150px;
+                width:95%;
+                height: 155px;
             }
             @media only screen and (max-width: 320px){
                 width:100%;
@@ -40,7 +40,11 @@
         }
         .price{
             color:$orange;
-            margin-bottom: 8px;  
+            margin-bottom: 8px;
+            .icon-carrot{
+                position: relative;
+                top:-3px;
+            }
         }
     }
 }
