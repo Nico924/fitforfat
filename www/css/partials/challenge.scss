@@ -3,6 +3,7 @@
     overflow: scroll;
     .challenges{
         .title{
+            color:rgb(90,90,90);
             text-transform: uppercase;
             font-size: 15px;
             padding-bottom: 5px;
@@ -18,21 +19,21 @@
                 width: 22%;
                 margin-right: 3%;
                 .img{
-                    width:80px;
+                    width:70px;
                     margin: auto;
-                    height: 80px;
+                    height: 70px;
                     border-radius: 60px;
-                    margin-bottom: 10px;
+                    margin-bottom: 13px;
                 }  
                 .info{
                     color:black;
                     text-align: center;
                     text-transform: uppercase;
                     .date{
-                        font-size:12px;
+                        font-size:13px;
                     }
                     .hour{
-                        font-size:9px;
+                        font-size:10px;
                     }
                 }
             }
@@ -40,7 +41,7 @@
                 float:right;
                 width: 75%;
                 .challenge-title{
-                    font-size: 14px;
+                    font-size: 13px;
                     text-transform: uppercase;
                 }
                 .challenge-teaser{
@@ -59,7 +60,7 @@
                     font-size: 10px;
                 }
                 .actions{
-                    margin-top: 20px;
+                    margin-top: 14px;
                     .button{
                         font-size:10px;
                         text-align: center;

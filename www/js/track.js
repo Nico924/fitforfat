@@ -7,7 +7,7 @@ track.prototype.addTp=function(trackpoint)
 {
     var timestamp=Date.now();
     trackpoint.timestamp=timestamp;
-    this.trackpoints.push(timestamp);
+    this.trackpoints.push(trackpoint);
 }
 
 track.prototype.distance_meters=function(tp1,tp2){
