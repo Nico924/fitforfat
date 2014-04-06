@@ -1,20 +1,21 @@
 header{
     width:100%;
     .presentation{
-        padding-top: 12px;
+        padding-top: 10px;
         position: relative;
-        padding-bottom: 16px;
+        padding-bottom: 12px;
         border-bottom: 3px solid $greyBorder;
         .title{
             text-align: center;
             font-size:23px;
             text-transform: uppercase;
+            margin-bottom: 2px;
         }
         .sub-title{
             text-align: center;
             text-transform: uppercase;
             font-size:13px;
-            color:$orange;
+            color:rgb(110,110,110);
         }
         .logo{
             height: 100%;
@@ -27,30 +28,26 @@ header{
         }
     }
     .menu{
-        height: 125px;
             .element{
-                height: 100%;
                 font-size:13px;
                 margin: 0px;
                 text-transform: uppercase;
                 width:33.3%;
                 position: relative;
-                padding-top:28px;
+                padding-top:25px;
                 padding-bottom: 17px;
                 float:left;
                 color:white;
                 position: relative;
                 .txt{
-                    position: absolute;
-                    bottom:17px;
                     text-align: center;
                     width: 100%;
 
                 }
                 img{
-                    height: 47px;
+                    height: 40px;
                     margin: auto;
-                    margin-bottom: 13px;
+                    margin-bottom:10px;          
                 }
                 img.activated{
                     display: none;

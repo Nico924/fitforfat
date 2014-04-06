@@ -1,4 +1,4 @@
-controllers.controller('PostController', ['$scope','$http', function($scope,$http) {
+controllers.controller('ChallengeController', ['$scope','$http', function($scope,$http) {
 	/*
     Constructor
     */

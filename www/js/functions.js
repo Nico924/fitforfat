@@ -130,3 +130,12 @@ function fixIE(){
             $('input, textarea').placeholder();
     },100);
 }
+/*
+*/
+function switchActivated(elem){
+    if(!elem.hasClass("selected")){
+        var parent=elem.parent();
+        parent.find(".selected").removeClass("selected");
+        elem.addClass("selected");
+    }
+}

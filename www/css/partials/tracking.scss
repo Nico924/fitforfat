@@ -1,5 +1,5 @@
 .tracking{
-    padding: 35px 20px;
+    padding: 30px 20px;
     padding-bottom: 0px;
     position: relative;
     height: 100%;
@@ -8,36 +8,38 @@
     color:rgb(74,74,74);
     //not started
     .title{
-        font-size:30px;
+        font-size:27px;
         padding: 0px 30px;
-        margin-bottom: 65px;
+        margin-bottom: 42px;
     }
     .sub-title{
         font-size:21px;
-        margin-bottom: 17px;
+        margin-bottom: 20px;
     }
     .option{
         @extend .back-light-grey;
-        padding: 30px;
+        padding: 25px;
+        font-size:19px;
         width:48%;
         margin: 0% 1%;
         float:left;
-        margin-bottom: 55px;
+        margin-bottom: 50px;
     }
     .option.selected{
         @extend .back-light-orange;
     }
-    .start{
+    .start,.end{
         width:100%;
-        padding: 18px 0px;
+        padding: 17px 0px;
         text-align: center;
-        font-size:30px;
-        margin-bottom: 45px;
+        font-size:26px;
+        margin-bottom: 20px;
     }
     //Started
     .title-start{
+        font-size:27px;
         margin-top: 6px;
-        margin-bottom: 45px;
+        margin-bottom: 35px;
     }
     .distance{
         font-size:60px;
@@ -49,4 +51,42 @@
         }
         margin-bottom: 30px;
     }
+    .info{
+        >div{
+            float:left;
+            width:33.3%;
+        }
+        text-align: center;
+        font-size:10px;
+        position: relative;
+        .info-title{
+            margin-bottom: 15px;
+        }
+        .sub-info{
+            font-size:8px;
+        }
+        .info-value{
+            font-size:22px;
+            margin-bottom: 18px;
+        }
+        margin-bottom: 30px;
+    }
+    .points{
+        .info-title{
+            margin-bottom: 6px;
+        }
+        .info-value{
+            font-size:40px;
+            margin-bottom: 3px;
+        }
+    }
+    .info.middle{
+        border-left:3px solid $greyBorder;
+        border-right:3px solid $greyBorder;
+    }
+    .end.button{
+        margin-top: 13px;
+        
+    }
+    
 }

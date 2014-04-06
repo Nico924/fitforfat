@@ -6,10 +6,10 @@
         <div class="sub-title">
             Which kind of track ?
         </div>
-        <div class="option button selected">
+        <div class="option button selected" onclick="switchActivated($(this))">
             solo
         </div>
-        <div class="option button">
+        <div class="option button" onclick="switchActivated($(this))">
             duo +
         </div>
         <div class="clear"></div>
@@ -19,10 +19,44 @@
     </div>
     <div ng-if="running">
         <div class="title-start">
-            Are you ready to run ?
+            You rock man !
         </div>
         <div class="distance">
             <span>{{distance}}</span>
-            <div clas="unit">m</div>
+            <div class="unit">m</div>
+        </div>
+        <div class="info">
+            <div class="points">
+                <div class="info-title">
+                    you earn
+                </div>
+                <div class="info-value turquoise">
+                    {{points}}
+                </div>
+                <div class="sub-info">points</div>
+            </div>
+            <div class="middle">
+                <div class="info-title">
+                    Your speed
+                </div>
+                <div class="info-value orange">
+                    {{speed}}
+                </div>
+                <div class="sub-info">speed</div>
+            </div>
+            <div>
+                <div class="info-title">
+                    You rock since
+                </div>
+                <div class="info-value orange">
+                    {{time}}
+                </div>
+                <div class="sub-info">times</div>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="end button back-turquoise" ng-click="stop()">
+            ending my run
+        </div>
     </div>
 </div>

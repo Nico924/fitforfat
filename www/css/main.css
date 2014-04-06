@@ -3,13 +3,13 @@
 */
 .orange {
   color: white;
-  color: #c35d28; }
+  color: #d2552c; }
 
 .back-orange {
-  background-color: #c35d28; }
+  background-color: #d2552c; }
 
 .back-orange:active {
-  background-color: #b44e19; }
+  background-color: #c3461d; }
 
 .bruin {
   color: #622e0f; }
@@ -80,22 +80,56 @@ body {
 .button {
   border-radius: 8px; }
 
+input[type=submit] {
+  border: none; }
+
+.link {
+  position: relative; }
+
+.link > a {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  height: 100%;
+  /* edit: added z-index */
+  z-index: 1;
+  /* edit: fixes overlap error in IE7/8, 
+   make sure you have an empty gif */
+  background-image: url("../img/empty.gif");
+  z-index: 10; }
+
+.link:hover {
+  cursor: pointer; }
+
+*:focus, textarea:focus, input:focus {
+  outline: 0; }
+
+textarea {
+  resize: none; }
+
+.uppercase {
+  text-transform: uppercase; }
+
 header {
   width: 100%; }
   header .presentation {
-    padding-top: 12px;
+    padding-top: 10px;
     position: relative;
-    padding-bottom: 16px;
+    padding-bottom: 12px;
     border-bottom: 3px solid #d2d2d2; }
     header .presentation .title {
       text-align: center;
       font-size: 23px;
-      text-transform: uppercase; }
+      text-transform: uppercase;
+      margin-bottom: 2px; }
     header .presentation .sub-title {
       text-align: center;
       text-transform: uppercase;
       font-size: 13px;
-      color: #c35d28; }
+      color: #6e6e6e; }
     header .presentation .logo {
       height: 100%;
       position: absolute;
@@ -103,43 +137,38 @@ header {
       top: 15%; }
       header .presentation .logo img {
         height: 70%; }
-  header .menu {
-    height: 125px; }
-    header .menu .element {
-      height: 100%;
-      font-size: 13px;
-      margin: 0px;
-      text-transform: uppercase;
-      width: 33.3%;
-      position: relative;
-      padding-top: 28px;
-      padding-bottom: 17px;
-      float: left;
-      color: white;
-      position: relative; }
-      header .menu .element .txt {
-        position: absolute;
-        bottom: 17px;
-        text-align: center;
-        width: 100%; }
-      header .menu .element img {
-        height: 47px;
-        margin: auto;
-        margin-bottom: 13px; }
-      header .menu .element img.activated {
-        display: none; }
-      header .menu .element img:not(.activated) {
-        display: block; }
-    header .menu .element.selected {
-      background-color: white;
-      color: black; }
-      header .menu .element.selected img.activated {
-        display: block; }
-      header .menu .element.selected img:not(.activated) {
-        display: none; }
+  header .menu .element {
+    font-size: 13px;
+    margin: 0px;
+    text-transform: uppercase;
+    width: 33.3%;
+    position: relative;
+    padding-top: 25px;
+    padding-bottom: 17px;
+    float: left;
+    color: white;
+    position: relative; }
+    header .menu .element .txt {
+      text-align: center;
+      width: 100%; }
+    header .menu .element img {
+      height: 40px;
+      margin: auto;
+      margin-bottom: 10px; }
+    header .menu .element img.activated {
+      display: none; }
+    header .menu .element img:not(.activated) {
+      display: block; }
+  header .menu .element.selected {
+    background-color: white;
+    color: black; }
+    header .menu .element.selected img.activated {
+      display: block; }
+    header .menu .element.selected img:not(.activated) {
+      display: none; }
 
 .tracking {
-  padding: 35px 20px;
+  padding: 30px 20px;
   padding-bottom: 0px;
   position: relative;
   height: 100%;
@@ -147,27 +176,29 @@ header {
   text-align: center;
   color: #4a4a4a; }
   .tracking .title {
-    font-size: 30px;
+    font-size: 27px;
     padding: 0px 30px;
-    margin-bottom: 65px; }
+    margin-bottom: 42px; }
   .tracking .sub-title {
     font-size: 21px;
-    margin-bottom: 17px; }
+    margin-bottom: 20px; }
   .tracking .option {
-    padding: 30px;
+    padding: 25px;
+    font-size: 19px;
     width: 48%;
     margin: 0% 1%;
     float: left;
-    margin-bottom: 55px; }
-  .tracking .start {
+    margin-bottom: 50px; }
+  .tracking .start, .tracking .end {
     width: 100%;
-    padding: 18px 0px;
+    padding: 17px 0px;
     text-align: center;
-    font-size: 30px;
-    margin-bottom: 45px; }
+    font-size: 26px;
+    margin-bottom: 20px; }
   .tracking .title-start {
+    font-size: 27px;
     margin-top: 6px;
-    margin-bottom: 45px; }
+    margin-bottom: 35px; }
   .tracking .distance {
     font-size: 60px;
     margin-bottom: 30px; }
@@ -175,6 +206,31 @@ header {
       margin-bottom: 22px; }
     .tracking .distance .unit {
       font-size: 13px; }
+  .tracking .info {
+    text-align: center;
+    font-size: 10px;
+    position: relative;
+    margin-bottom: 30px; }
+    .tracking .info > div {
+      float: left;
+      width: 33.3%; }
+    .tracking .info .info-title {
+      margin-bottom: 15px; }
+    .tracking .info .sub-info {
+      font-size: 8px; }
+    .tracking .info .info-value {
+      font-size: 22px;
+      margin-bottom: 18px; }
+  .tracking .points .info-title {
+    margin-bottom: 6px; }
+  .tracking .points .info-value {
+    font-size: 40px;
+    margin-bottom: 3px; }
+  .tracking .info.middle {
+    border-left: 3px solid #d2d2d2;
+    border-right: 3px solid #d2d2d2; }
+  .tracking .end.button {
+    margin-top: 13px; }
 
 /* required styles */
 .leaflet-map-pane,

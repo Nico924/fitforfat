@@ -3,7 +3,7 @@ angular.module('app', ['ngSanitize','ngRoute','directives','factories','controll
 	$routeProvider.
 		when('/', {templateUrl: 'partials/tracking.html',controller:"TrackingController"}).
         when('/tracking', {templateUrl: 'partials/tracking.html',controller:"TrackingController"}).
-		when('/post', {templateUrl:'partials/post.html',controller:"PostController"}).
+		when('/challenge', {templateUrl:'partials/challenge.html',controller:"ChallengeController"}).
         when('/store',{templateUrl:'partials/store.html',controller:"StoreController"}).
 		otherwise({redirectTo: '/tracking'});
 	}]).run(function($rootScope, $templateCache) {

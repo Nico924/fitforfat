@@ -1,9 +1,9 @@
 <div class="presentation">
     <div class="logo">
-        <img class="img" src="/assets/logo.png"/>
+        <img class="img" src="assets/logo.png"/>
     </div>
     <div class="title">
-        Sportcoins
+        <span class="light-orange">carrot</span><span class="orange">club</span>
     </div>
     <div class="sub-title orange">
         Move. Engage. Gain.
@@ -11,22 +11,25 @@
     <div class="logo"></div>
 </div>
 <div class="menu">
-    <div class="element back-light-orange selected">
+    <div class="element back-light-orange selected link" onclick="switchActivated($(this))">
+        <a href="#/tracking"></a>
         <img class="activated" src="assets/runner_grey.png"/>
         <img src="assets/runner_white.png"/>
         <div class="txt">
             Tracking
         </div>
     </div>
-    <div class="element back-orange">
+    <div class="element back-orange link" onclick="switchActivated($(this))">
+        <a href="#/challenge"></a>
         <img class="activated" src="assets/calendar_grey.png"/>
         <img src="assets/calendar_white.png"/>
         <div class="txt">
             Challenges
         </div>
     </div>
-    <div class="element back-bruin">
-        <img class="activated" src="assets/-trophy_grey.png"/>
+    <div class="element back-bruin link" onclick="switchActivated($(this))">
+        <a href="#/store"></a>
+        <img class="activated" src="assets/trophy_grey.png"/>
         <img src="assets/trophy_white.png"/>
         <div class="txt">
             Rewards
