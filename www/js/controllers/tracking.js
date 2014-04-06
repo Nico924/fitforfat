@@ -31,6 +31,10 @@ controllers.controller('TrackingController', ['$scope','$http', function($scope,
         $scope.frequency=500;//ms
         $scope.trackin=new track();
         $scope.running=false;
+        $scope.distance=0;
+        $scope.points=0;
+        $scope.speed=0;
+        $scope.timing="0'00''";
         console.log($scope.running);
         
     }

@@ -2,17 +2,25 @@
 
 */
 $light-orange:rgb(249,143,115);
+$light-orange-active:rgb(224,128,100);
 $orange:rgb(195,93,40);
+$orange-active:rgb(180,78,25);
 $bruin:rgb(98,46,15);
+$bruin-active:rgb(83,31,0);
 $turquoise:rgb(75,162,154);
+$turquoise-active:rgb(60,147,139);
 $greyBorder:rgb(210,210,210);
 $light-grey:rgb(240,240,240);
+$light-grey-active:rgb(225,225,225);
 .orange{
     color:white;
     color:$orange;
 }
 .back-orange{
     background-color: $orange;
+}
+.back-orange:active{
+    background-color: $orange-active;
 }
 .bruin{
     color:$bruin;
@@ -21,22 +29,36 @@ $light-grey:rgb(240,240,240);
     color:white;
     background-color: $bruin;
 }
+.back-bruin:active{
+    background-color: $bruin-active;
+}
 .turquoise{
     color:$turquoise;
 }
 .back-turquoise{
+    color:white;
     background-color: $turquoise;
+}
+.back-turquoise:active{
+    background-color: $turquoise-active;
 }
 .light-orange{
     color:white;
     color:$light-orange;
 }
-.light-back-orange{
+.back-light-orange{
+    color:white;
     background-color: $light-orange;
+}
+.back-light-orange:active{
+    background-color: $light-orange-active;
 }
 .back-light-grey{
     color:black;
     background-color: $light-grey;
+}
+.back-light-grey:active{
+    background-color: $light-grey-active;
 }
 .light-grey{
     color:$light-grey;

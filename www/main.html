@@ -19,7 +19,7 @@
     <![endif]-->
 	<link href="css/main.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Spinnaker' rel='stylesheet' type='text/css'>
-    
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="lib/jquery/jquery-1.9.1.js"></script>
 	<script type="text/javascript" src="lib/angular/angular.js"></script>    
     <script type="text/javascript" src="lib/angular/angular-sanitize.js"></script>
@@ -28,7 +28,8 @@
     <script src="js/config.js"></script>
     <script src="js/helper.js"></script>
     <script src="js/functions.js"></script>
-    
+    <script src="js/track.js"></script>
+
     <script src="js/factories.js"></script>
 	<script src="js/directives.js"></script>
     <!-- Controllers -->
@@ -47,8 +48,8 @@
     
 </head>
 <body>
-    <footer ng-include="'partials/header.html'"  ng-controller="HeaderController"></footer>
-	<div ng-view></div>
+    <header ng-include="'partials/header.html'"  ng-controller="HeaderController"></header>
+	<div class="container" ng-view></div>
     <footer ng-include="'partials/footer.html'"></footer>
 </body>
 </html>
