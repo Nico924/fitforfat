@@ -16,6 +16,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
                 var velocity=$scope.trackin.avgvelocity();
                 $scope.velocity=Math.round(velocity*10)/10
                 $scope.speed=$scope.velocity+" m/s";
+
                 $scope.points=computePoint($scope.velocity,$scope.distance,$scope.numPeople);
             }
         });
@@ -27,7 +28,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
     }
     $scope.watchPosition=function(){
         $scope.interval=setInterval(function(){
-            var watchID = navigator.geolocation.getCurrentPosition($scope.interpretPosition,$scope.handleErrorPosition);
+            var watchID = navigator.geolocation.getCurrentPosition($scope.interpretPosition,$scope.handleErrorPosition,{ enableHighAccuracy: true });
         },$scope.frequency)
     }
     /*
