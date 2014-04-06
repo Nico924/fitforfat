@@ -9,20 +9,18 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
             //time
             if($scope.trackin.trackpoints.length>1){
 //                $scope.current_time=$scope.trackin.totaltime_miliseconds();
-                $scope.current_time= Date.now() - $scope.startTime;
+
                 $scope.timing=convertTimeString($scope.current_time);
                 //distance
                var dist=$scope.trackin.totaldistance_meters(); $scope.distance=Math.round(dist*10)/10
                 //speed
                 var velocity=$scope.trackin.avgvelocity();
-                $scope.velocity=Math.round(velocity*10)/10
-                $scope.speed=$scope.velocity+" m/s";
-                $scope.speed=$scope.velocity+ myPos.lat;
+
                 $scope.points=computePoint($scope.velocity,$scope.distance,$scope.numPeople);
             }
         });
-
     }
+
     $scope.handleErrorPosition=function(error){
         helper.showAlert('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
@@ -39,10 +37,12 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
         $scope.running=true;
         $scope.watchPosition();
         $scope.startTime = Date.now();
+        $scope.chrono = setInterval(function(){ $scope.current_time= Date.now() - $scope.startTime ;},1000);
     }
     $scope.stop=function(){
         $scope.running=false;
         clearInterval($scope.interval);
+        clearInterval($scope.chrono);
         helper.showAlert("You have won "+$scope.points+" point(s), use them in the reward store");
         $scope.trackin=new track();
     }
