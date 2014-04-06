@@ -1,5 +1,5 @@
 controllers.controller('TrackingController',['$scope','$http','$location', function($scope,$http,$location) {
-	$scope.interpretPosition=function(position){
+        $scope.interpretPosition=function(position){
         var myPos={
             "lat":position.coords.latitude,
             "lon":position.coords.longitude
@@ -8,7 +8,8 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
             $scope.trackin.addTp(myPos);
             //time
             if($scope.trackin.trackpoints.length>1){
- $scope.current_time=$scope.trackin.totaltime_miliseconds();
+//                $scope.current_time=$scope.trackin.totaltime_miliseconds();
+                $scope.current_time=$scope.startTime - Date.now();
                 $scope.timing=convertTimeString($scope.current_time);
                 //distance
                var dist=$scope.trackin.totaldistance_meters(); $scope.distance=Math.round(dist*10)/10
@@ -17,7 +18,7 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
                 $scope.velocity=Math.round(velocity*10)/10
                 $scope.speed=$scope.velocity+" m/s";
                 $scope.points=computePoint($scope.velocity,$scope.distance,$scope.numPeople);
-            }  
+            }
         });
 
     }
@@ -25,17 +26,18 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
         helper.showAlert('code: '    + error.code    + '\n' +
                   'message: ' + error.message + '\n');
     }
-    $scope.watchPosition=function(){ 
+    $scope.watchPosition=function(){
         $scope.interval=setInterval(function(){
             var watchID = navigator.geolocation.getCurrentPosition($scope.interpretPosition,$scope.handleErrorPosition);
         },$scope.frequency)
     }
     /*
     Control functions
-    */
+     */
     $scope.start=function(){
         $scope.running=true;
         $scope.watchPosition();
+        $scope.startTime = Date.now();
     }
     $scope.stop=function(){
         $scope.running=false;
