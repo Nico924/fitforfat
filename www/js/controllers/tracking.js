@@ -41,7 +41,8 @@ controllers.controller('TrackingController',['$scope','$http','$location', funct
         $scope.watchPosition();
         $scope.startTime = Date.now();
         $scope.chrono = setInterval(function(){ $scope.current_time= Date.now() - $scope.startTime;
-$scope.timing=convertTimeString($scope.current_time);  },1000);
+       $scope.timing=convertTimeString($scope.current_time);  },1000);
+        alert('test')
     }
 
     $scope.stop=function(){
